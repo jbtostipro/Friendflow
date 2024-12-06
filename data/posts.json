@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "author": "Jean-batien tosti",
+        "text": "Bonjour à vous j'ai crée FriendFlow !",
+        "image": "images/telechargement.jpg"
+    },
+    {
+        "id": 2,
+        "author": "Alice Martin",
+        "text": "Voilà une image pour bien commencer la journée!",
+        "image": "images/image-libre-de-droit-wikiclic.jpg"
+    },
+    {
+        "id": 3,
+        "author": "Bob Dupont",
+        "text": "Pas d'image ici, juste un petit coucou !",
+        "image": ""
+    }
+]
