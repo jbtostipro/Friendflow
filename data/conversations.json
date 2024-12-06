@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "contactName":"Melissa sprint",
+        "contactImage":"images/Melissa.png",
+        "messages":[
+            {"author":"me","text":"Salut Melissa","timestamp":"2024-12-06 10:00"},
+            {"author":"Melissa","text":"Coucou, comment vas-tu ?","timestamp":"2024-12-06 10:01"}
+        ]
+    },
+    {
+        "id":2,
+        "contactName":"Bob Dupont",
+        "contactImage":"images/bob.png",
+        "messages":[
+            {"author":"me","text":"Salut Bob, dispo ce soir ?","timestamp":"2024-12-06 09:30"},
+            {"author":"Bob","text":"Oui, on se retrouve où jb?, tu aime ma nouvelle photo de profils ","timestamp":"2024-12-06 09:35"}
+        ]
+    },
+    {
+        "id":3,
+        "contactName":"Alice Martin",
+        "contactImage":"images/Alice.png",
+        "messages":[
+            {"author":"me","text":"Hello Alice","timestamp":"2024-12-06 08:50"},
+            {"author":"Alice","text":"Salut ! Des news ?","timestamp":"2024-12-06 08:55"}
+        ]
+    }
+]
