@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MySocial - Amis</title>
+    <link rel="stylesheet" href="css/friends.css"/>
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">MySocial</h1>
+        <nav class="top-nav">
+            <a href="index.html">Accueil</a>
+            <a href="feed.html">Feed</a>
+            <a href="messages.html.html">Messagerie</a>
+        </nav>
+    </header>
+    <main class="container">
+        <ul id="friends-list" class="friends-list">
+            <li class="friend-item" draggable="true" data-convid="1">
+                <img src="images/alice.png" alt="Alice" class="friend-img"/>
+                <span class="friend-name">Alice Dupont</span>
+                <a href="messages.html" class="go-message">Message</a>
+            </li>
+            <li class="friend-item" draggable="true" data-convid="2">
+                <img src="images/bob.png" alt="Bob" class="friend-img"/>
+                <span class="friend-name">Bob Martin</span>
+                <a href="messages.html" class="go-message">Message</a>
+            </li>
+            <li class="friend-item" draggable="true" data-convid="3">
+                <img src="images/caroline.png" alt="Caroline" class="friend-img"/>
+                <span class="friend-name">Caroline Leroy</span>
+                <a href="messages.html" class="go-message">Message</a>
+            </li>
+        </ul>
+    </main>
+    <script src="js/friends.js"></script>
+</body>
+</html>

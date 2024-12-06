@@ -14,7 +14,7 @@
         "contactImage":"images/bob.png",
         "messages":[
             {"author":"me","text":"Salut Bob, dispo ce soir ?","timestamp":"2024-12-06 09:30"},
-            {"author":"Bob","text":"Oui, on se retrouve où jb?, tu aime ma nouvelle photo de profils ","timestamp":"2024-12-06 09:35"}
+            {"author":"Bob","text":"Oui, on se retrouve où jb?, tu aime ma nouvelle photo de profil ","timestamp":"2024-12-06 09:35"}
         ]
     },
     {
