@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('posts-container');
 
-    // Charger les posts depuis le JSON
     fetch('data/posts.json')
         .then(response => response.json())
         .then(posts => {

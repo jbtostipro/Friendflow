@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FriendFlow - Messagerie</title>
+    <link rel="stylesheet" href="css/messages.css"/>
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">FriendFlow </h1>
+        <nav class="top-nav">
+            <a href="index.html">Accueil</a>
+            <a href="feed.html">Feed</a>
+            <a href="friends.html">Amis</a>
+        </nav>
+    </header>
+    <main class="messages-container">
+        <aside class="conversations-list">
+            <h2>Conversations</h2>
+            <ul id="conversations-ul"></ul>
+        </aside>
+        <section class="conversation-detail">
+            <h2 id="conv-title">Sélectionnez une conversation</h2>
+            <div id="messages-container" class="messages-container"></div>
+            <form id="message-form" class="message-form" style="display:none;">
+                <input type="text" id="new-message-input" placeholder="Votre message..."/>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/messages.js"></script>
+</body>
+</html>
