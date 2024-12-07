@@ -1,25 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('posts-container');  
-    const imageModal = document.getElementById('image-modal');    
-    const modalImg = document.getElementById('modal-img');        
-    const closeModal = document.getElementById('close-modal');     
+    const container = document.getElementById('posts-container');
+    const imageModal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModal = document.getElementById('close-modal');
 
-    // Récupère les posts depuis le fichier JSON
     fetch('data/posts.json')
-        .then(r => r.json())
+        .then(res => res.json())
         .then(posts => {
-            // Pour chaque post, crée la structure HTML correspondante
             posts.forEach(post => {
                 const postEl = document.createElement('div');
                 postEl.className = 'post';
 
-                // Auteur du post
+                // Auteur
                 const headerEl = document.createElement('div');
                 headerEl.className = 'post-header';
                 headerEl.innerHTML = `<span class="post-author">${post.author}</span>`;
                 postEl.appendChild(headerEl);
 
-                // Texte du post 
+                // Texte
                 if (post.text) {
                     const textEl = document.createElement('p');
                     textEl.className = 'post-text';
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     postEl.appendChild(textEl);
                 }
 
-                // Image du post 
+                // Image (clic = plein écran)
                 if (post.image) {
                     const imgEl = document.createElement('img');
                     imgEl.className = 'post-image';
@@ -40,26 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     postEl.appendChild(imgEl);
                 }
 
-                // Bloc de réactions
+                // Réactions
                 const reactionsEl = document.createElement('div');
                 reactionsEl.className = 'reactions';
                 ['👍','👎','❤️'].forEach(emoji => {
                     const btn = document.createElement('button');
                     btn.textContent = emoji;
-                    // Au clic sur un bouton de réaction, lance l'animation de particules
                     btn.addEventListener('click', () => animateReaction(btn, emoji));
                     reactionsEl.appendChild(btn);
                 });
                 postEl.appendChild(reactionsEl);
 
-                // Bloc des commentaires
+                // Commentaires 
+                const commentsContainer = document.createElement('div');
+                commentsContainer.className = 'comments-container';
                 const commentsTitle = document.createElement('h3');
                 commentsTitle.textContent = 'Commentaires';
                 commentsContainer.appendChild(commentsTitle);
-                const commentsContainer = document.createElement('div');
-                commentsContainer.className = 'comments-container';
 
-                // Liste des commentaires existants
                 const commentsList = document.createElement('div');
                 commentsList.className = 'comments-list';
                 (post.comments || []).forEach(c => {
@@ -70,10 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 commentsContainer.appendChild(commentsList);
 
-                // Formulaire pour ajouter un nouveau commentaire
                 const addCommentForm = document.createElement('form');
                 addCommentForm.className = 'add-comment-form';
-
                 const commentInput = document.createElement('input');
                 commentInput.type = 'text';
                 commentInput.placeholder = 'Votre commentaire...';
@@ -81,14 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const commentBtn = document.createElement('button');
                 commentBtn.type = 'submit';
                 commentBtn.textContent = 'Envoyer';
-
                 addCommentForm.append(commentInput, commentBtn);
 
-                // Quand le formulaire est soumis, on ajoute le commentaire tapé
                 addCommentForm.addEventListener('submit', e => {
                     e.preventDefault();
                     const val = commentInput.value.trim();
-                    if(val) {
+                    if (val) {
                         const newC = document.createElement('div');
                         newC.className = 'comment';
                         newC.innerHTML = `<span class="comment-author">Vous:</span> ${val}`;
@@ -100,12 +92,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 commentsContainer.appendChild(addCommentForm);
                 postEl.appendChild(commentsContainer);
 
-                // Ajoute le post complet au conteneur principal
                 container.appendChild(postEl);
             });
         })
         .catch(err => console.error("Erreur chargement posts:", err));
 
+    // Modal fermeture
+    window.addEventListener('click', e => {
+        if(e.target === imageModal){
+            imageModal.style.display = 'none';
+            modalImg.src = '';
+        }
+    });
 
-
+    function animateReaction(button, emoji) { // affichier l'émoji puis il disparrait
+        const particle = document.createElement('span');
+        particle.textContent = emoji;
+        particle.style.position = 'absolute';
+        particle.style.fontSize = '2rem';
+        const rect = button.getBoundingClientRect();
+        particle.style.left = (rect.left + window.scrollX + rect.width/2) + 'px';
+        particle.style.top = (rect.top + window.scrollY + rect.height/2) + 'px';
+        particle.style.transform = 'translate(-50%, -50%)';
+        particle.style.animation = 'fly 1s ease-out forwards';
+        particle.style.zIndex = 9999;
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 1000);
+    }
 });
