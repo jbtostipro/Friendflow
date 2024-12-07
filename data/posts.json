@@ -16,5 +16,17 @@
         "author": "Bob Dupont",
         "text": "Pas d'image ici, juste un petit coucou !",
         "image": ""
+    },
+    {
+        "id": 4,
+        "author": "jack dupres",
+        "text": "hey hey hey  !",
+        "image": ""
+    },
+    {
+        "id": 5,
+        "author": "elon musk",
+        "text": "je vais racheter friendflow ",
+        "image": ""
     }
 ]
