@@ -15,7 +15,7 @@ Je me suis permis de continuer sur la branche main, car il s’agit d’un petit
 Pour rendre le projet accessible via une IHM, j'ai utilisé Laragon, ce qui m'a permis de travailler plus efficacement et rapidement.
 
 
-- Fonctionnalités Réalisées dans les grandes lignes : 
+## Fonctionnalités Réalisées dans les grandes lignes : 
 # feed
 - Affichage des Posts depuis un fichier JSON ( post JSON )
 - Réactions aux Posts avec animations
