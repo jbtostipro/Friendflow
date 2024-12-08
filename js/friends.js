@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const friendsList = document.getElementById('friends-list');
     const filterInput = document.getElementById('friend-filter');
-    let draggedItem = null;
 
     filterInput.addEventListener('input', () => {
         const val = filterInput.value.toLowerCase();
