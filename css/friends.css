@@ -130,6 +130,19 @@ body {
     font-weight:bold;
 }
 
+.filter-input {/*  */
+    width:100%;
+    max-width:400px;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#fff;
+    font-size:0.9rem;
+    outline:none;
+    color: var(--text);
+    margin-bottom: 6%;
+}
+
 @media (min-width: 500px) {
     .logo {
         font-size:1.5rem;

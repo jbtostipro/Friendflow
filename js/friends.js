@@ -1,33 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const friendsList = document.getElementById('friends-list');
+    const filterInput = document.getElementById('friend-filter');
     let draggedItem = null;
 
-    // Drag & Drop
-    friendsList.addEventListener('dragstart', (e) => {
-        if(e.target.classList.contains('friend-item')){
-            draggedItem = e.target;
-            e.dataTransfer.effectAllowed = 'move';
-        }
-    });
-
-    friendsList.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        const element = e.target.closest('.friend-item');
-        if(element && element !== draggedItem) {
-            const bounding = element.getBoundingClientRect();
-            const offset = bounding.y + bounding.height/2;
-            if(e.clientY - offset > 0) {
-                // déplacer en dessous
-                element.insertAdjacentElement('afterend', draggedItem);
+    filterInput.addEventListener('input', () => {
+        const val = filterInput.value.toLowerCase();
+        const items = friendsList.querySelectorAll('.friend-item');
+        items.forEach(item => {
+            const name = item.querySelector('.friend-name').textContent.toLowerCase();
+            if(name.includes(val)) {
+                item.style.display='';
             } else {
-                // déplacer au-dessus
-                element.insertAdjacentElement('beforebegin', draggedItem);
+                item.style.display='none';
             }
-        }
-    });
-
-    friendsList.addEventListener('drop', (e) => {
-        e.preventDefault();
-        draggedItem = null;
+        });
     });
 });
