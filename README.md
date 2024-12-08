@@ -49,4 +49,4 @@ Pour rendre le projet accessible via une IHM, j'ai utilisé Laragon, ce qui m'a 
 
 voici un appecue du projet : 
 
-[alt text](./images/image.png)
+![alt text](./images/image.png)
