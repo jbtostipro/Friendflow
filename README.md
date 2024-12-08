@@ -47,4 +47,6 @@ Pour rendre le projet accessible via une IHM, j'ai utilisé Laragon, ce qui m'a 
 # Documentation
 - Readme 
 
-voici un appecue du projet : ![alt text](./images/image.png)
+voici un appecue du projet : 
+
+[alt text](./images/image.png)
